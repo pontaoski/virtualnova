@@ -1,0 +1,16 @@
+#!/usr/bin/env rc
+
+switch ($1) {
+
+case run
+    cd assembler
+
+    go build
+    ./assembler in.tsko out.prg
+
+    cd ..
+
+    go build
+    ./virtualnova ./assembler/out.prg
+
+}

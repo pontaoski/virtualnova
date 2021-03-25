@@ -1,0 +1,19 @@
+/* this is the entrypoint of a tawa VM assembly program */
+
+init: {
+    | 0 -> reg5 longword
+      jump main
+}
+
+main: {
+    | 1 -> reg0 longword
+    | copy reg5 -> reg1
+    | add
+    | copy reg2 -> reg5
+      jump paint
+}
+
+paint: {
+    | store longword reg5 -> 2491040
+      jump main
+}
